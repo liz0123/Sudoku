@@ -63,7 +63,3 @@ def printBoard(board):
 			if j %3 ==0 and not(j in [0,len(board[0])-1]):
 				print(" | ", end="")
 			print(str(board[i][j])+" ",end="")
-
-sudokuSolver(board)
-
-printBoard(board)
