@@ -1,17 +1,7 @@
 
-board= [[5,3,0,0,7,0,0,0,0],
-		[6,0,0,1,9,5,0,0,0],
-		[0,9,8,0,0,0,0,6,0],
-		[8,0,0,0,6,0,0,0,3],
-		[4,0,0,8,0,3,0,0,1],
-		[7,0,0,0,2,0,0,0,6],
-		[0,6,0,0,0,0,2,8,0],
-		[0,0,0,4,1,9,0,0,5],
-		[0,0,0,0,8,0,0,7,9]]
-
 def sudokuSolver(board):
 	# Input: Double array representing the Sudoku Puzzle
-	# Outputs: True or False dependon on if a solucion was found for the puzzle.
+	# Outputs: True if a solucion was found for the puzzle else False.
 	# Note: if found solution, puzzle will be updated with solution.
 	pos = emptyCell(board)
 	if not pos:
@@ -63,3 +53,21 @@ def printBoard(board):
 			if j %3 ==0 and not(j in [0,len(board[0])-1]):
 				print(" | ", end="")
 			print(str(board[i][j])+" ",end="")
+
+if __name__ == "__main__":
+	board= [[5,3,0,0,7,0,0,3,0],
+		[6,0,0,1,9,5,0,0,0],
+		[0,9,8,0,0,0,0,6,0],
+		[8,0,0,0,6,0,0,0,3],
+		[4,0,0,8,0,3,0,0,1],
+		[7,0,0,0,2,0,0,0,6],
+		[0,6,0,0,0,0,2,8,0],
+		[0,0,0,4,1,9,0,0,5],
+		[0,0,0,0,8,0,0,7,9]]
+
+	solved = sudokuSolver(board)
+	if solved:
+		print(f"\nSolution: ")
+		printBoard(board)
+	else:
+		print(f"\nUnsolvable!\n")
